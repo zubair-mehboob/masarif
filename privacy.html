@@ -18,11 +18,11 @@
 </header>
 <main>
 <h1>Privacy Policy</h1>
-<p class="meta">Masarif for Android · Published by Masarif Finance · Effective 3 October 2026</p>
+<p class="meta">Masarif for Android · Published by Masarif Finance · Effective 8 October 2026</p>
 
 <div class="summary">
-  <p><strong>In short.</strong> Masarif keeps your financial records on your phone. We run no servers, you create no account, and the app contains no advertising, analytics or tracking.</p>
-  <p>Information leaves your phone only when you choose an action that sends it, such as pushing a statement to your own Google Sheet, sending a WhatsApp reminder, or sharing an export. Those actions are listed below.</p>
+  <p><strong>In short.</strong> Masarif keeps your financial records on your phone. You create no account, and the app contains no advertising, analytics or tracking. The only service we run is one that briefly holds a grocery list you choose to share with a shopkeeper, in encrypted form that we cannot read.</p>
+  <p>Information leaves your phone only when you choose an action that sends it, such as sharing a grocery list with a shopkeeper, pushing a statement to your own Google Sheet, sending a WhatsApp reminder, or sharing an export. Those actions are listed below.</p>
 </div>
 
 <h2>Who we are</h2>
@@ -37,9 +37,12 @@
   <li>Loans: the person's name, an optional phone number, amounts, due dates and repayments.</li>
   <li>Money held for others: the person or fund name, notes, entries and items, and an optional Google Sheet link you provide.</li>
   <li>Zakat estimate settings.</li>
+  <li>Grocery lists: list names, items, quantities and prices, and, while a list is shared, the link and key needed to read the shopkeeper's answers.</li>
+  <li>An unfinished transaction, kept as a draft until you save or discard it.</li>
+  <li>A photo you attach to a transaction, such as a receipt. The app keeps its own copy in its private storage. It is not uploaded anywhere and is not included in backups or exports.</li>
   <li>App settings: language, alerts, and app lock. If you set a passcode, it is kept in your device's secure storage.</li>
 </ul>
-<p>We cannot see any of this. It is not sent to us, because the app does not connect to any service operated by us.</p>
+<p>We cannot see any of this. The app connects to a service operated by us only when you share a grocery list, and what it sends then is encrypted so that we cannot read it (see "Sharing a grocery list" below).</p>
 
 <h2>How the stored information is protected</h2>
 <p>The records are kept in a database inside the app's private storage, which other apps cannot read on a standard, unmodified Android device. The app does not add its own encryption to this database; it relies on the protection Android and your device provide, including your screen lock and device encryption. You can add an app lock with a passcode and, if you choose, fingerprint or face unlock.</p>
@@ -50,6 +53,7 @@
 <div class="table-wrap">
 <table>
   <tr><th>Action</th><th>What is sent</th><th>Who receives it</th></tr>
+  <tr><td>Share a grocery list with a shopkeeper</td><td>That list's name and items, encrypted on your phone before it is sent. The shopkeeper's answers (what was taken, quantities and prices) are encrypted in their browser in the same way</td><td>Our list-sharing service, which stores the encrypted list until the link expires (1, 6 or 24 hours, as you choose) or you end it. Anyone you give the link to can read and fill in that list</td></tr>
   <tr><td>Push to Google Sheet (money held for others)</td><td>That one person's or fund's name, purpose, entries, items and balance</td><td>Google, into a Google Sheet in your own Google account, through a script link you set up</td></tr>
   <tr><td>WhatsApp loan reminder</td><td>The reminder text, including the person's name, the amount and any due date, and the phone number you saved</td><td>WhatsApp, on your phone. Nothing is sent until you press send in WhatsApp</td></tr>
   <tr><td>Share a CSV or PDF export, or an encrypted backup</td><td>The file you create</td><td>The app or person you choose in the share sheet</td></tr>
@@ -58,19 +62,29 @@
 </div>
 <p>Information handled by Google, WhatsApp or your device's speech service is subject to their own privacy policies. If you share a Google Sheet with someone, they can see what is in that sheet.</p>
 
+<h2>Sharing a grocery list</h2>
+<p>When you share a grocery list, the app encrypts it on your phone and uploads the encrypted copy to our list-sharing service, which runs on Cloudflare. The key that unlocks it is part of the link you send and is never sent to the service, so neither we nor Cloudflare can read the list or the shopkeeper's answers.</p>
+<ul>
+  <li>The link is the permission: anyone who has it can read and fill in that list until it expires. Send it only to the shopkeeper.</li>
+  <li>The encrypted list is deleted when the link expires (1, 6 or 24 hours after sharing, as you choose) or as soon as you end the link in the app. Expired lists are removed from storage within a day.</li>
+  <li>To limit abuse, the service counts requests from each network address. It keeps the address only as a scrambled value inside a counter that lasts at most one hour. Cloudflare also processes network addresses to deliver the service, under its own privacy policy.</li>
+  <li>If the shopkeeper uses Masarif and chooses "Save to my Masarif", their app downloads the same encrypted list and saves the sale on their own phone.</li>
+</ul>
+
 <h2>Permissions the app asks for</h2>
 <ul>
   <li><strong>Contacts</strong> (optional): only when you tap "Contacts" on a loan, to let you pick one person. The app saves that person's name and number with the loan on your phone. It does not copy your address book, upload contacts, or change them.</li>
   <li><strong>Microphone</strong> (optional): only while you dictate a transaction. The app does not keep audio recordings.</li>
   <li><strong>Notifications</strong> (optional): to show budget alerts created on your device.</li>
   <li><strong>Fingerprint or face unlock</strong> (optional): to unlock the app. Your device performs the check and tells the app only whether it succeeded; the app never receives biometric data.</li>
-  <li><strong>Internet</strong>: used for the Google Sheet push and, if your device's speech service needs it, for dictation.</li>
+  <li><strong>Photos</strong>: no permission is requested. When you attach a photo, your phone's own photo picker opens and gives the app only the one photo you choose; the app cannot browse your gallery.</li>
+  <li><strong>Internet</strong>: used for sharing a grocery list, for the Google Sheet push and, if your device's speech service needs it, for dictation.</li>
 </ul>
 <p>You can refuse or withdraw any optional permission in Android settings and keep using the rest of the app.</p>
 
 <h2>What we do not do</h2>
 <ul>
-  <li>We do not collect, sell, rent or share your personal or financial information.</li>
+  <li>We do not sell, rent or share your personal or financial information, and we hold nothing of yours that we can read.</li>
   <li>We do not show advertising or use advertising identifiers.</li>
   <li>We do not use analytics, crash reporting or tracking tools.</li>
   <li>We do not read your SMS messages or connect to your bank.</li>
@@ -81,7 +95,7 @@
 
 <h2>Keeping and deleting your information</h2>
 <p>Your records stay on your phone until you delete them. You can delete individual records in the app. Clearing the app's data in Android settings or uninstalling the app removes everything it stored on the device. This cannot be undone unless you kept a backup.</p>
-<p>Copies you have sent elsewhere, such as a Google Sheet, a shared export or a WhatsApp message, are outside the app. Delete those where they are kept. Because we hold none of your information, we have nothing to delete or hand over on request, but you are welcome to contact us with any question.</p>
+<p>Copies you have sent elsewhere, such as a Google Sheet, a shared export or a WhatsApp message, are outside the app. Delete those where they are kept. A shared grocery list is the only thing we hold, encrypted and only until its link expires; end the link in the app to delete it sooner. Because we cannot read it and hold nothing else, we have nothing to hand over on request, but you are welcome to contact us with any question.</p>
 
 <h2>Children</h2>
 <p>Masarif is a finance tool intended for adults. It is not directed at children under 13, and we do not knowingly collect information from children.</p>
